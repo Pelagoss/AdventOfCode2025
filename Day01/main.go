@@ -2,32 +2,83 @@ package Day01
 
 import (
 	"adventOfCode/utils"
+	"math"
 	"strconv"
 )
 
 func ResolvePart1(data []string) int {
-
-	var list1 []int
-	var list2 []int
+	countZeros := 0
+	pos := 50
 
 	for i := 0; i < len(data); i++ {
-		splitted := utils.RegSplit(data[i], "\\s+")
+		lettre := data[i][:1]
+		nombreStr := data[i][1:]
 
-		if value, err := strconv.Atoi(splitted[0]); err == nil {
-			list1 = append(list1, value)
+		nombre, err := strconv.Atoi(nombreStr)
+
+		if err != nil {
+			panic("aaaah")
 		}
 
-		if value, err := strconv.Atoi(splitted[1]); err == nil {
-			list2 = append(list2, value)
+		if lettre == "R" {
+			pos = (int)(math.Mod((float64)(pos+nombre), 100))
+		} else if lettre == "L" {
+			pos = (int)(math.Mod((float64)(pos-nombre), 100))
+		}
+
+		if pos == 0 {
+			countZeros++
 		}
 	}
 
-	return 0
+	return countZeros
 }
 
 func ResolvePart2(data []string) int {
+	countZeros := 0
+	pos := 50
 
-	return 0
+	for i := 0; i < len(data); i++ {
+		lettre := data[i][:1]
+		nombreStr := data[i][1:]
+
+		nombre, err := strconv.Atoi(nombreStr)
+
+		if err != nil {
+			panic("aaaah")
+		}
+
+		if len(nombreStr) > 2 {
+			resteStr := nombreStr[len(nombreStr)-2:]
+			reste, err := strconv.Atoi(resteStr)
+
+			if err != nil {
+				panic("aaaah")
+			}
+
+			centaine := (nombre - reste) / 100
+
+			countZeros += centaine
+
+			nombre = nombre - (centaine * 100)
+		}
+
+		previousPos := pos
+
+		if lettre == "R" {
+			pos = utils.Modulo(pos+nombre, 100)
+			if (pos < previousPos) && previousPos != 0 {
+				countZeros++
+			}
+		} else if lettre == "L" {
+			pos = utils.Modulo(pos-nombre, 100)
+			if (pos > previousPos || pos == 0) && previousPos != 0 {
+				countZeros++
+			}
+		}
+	}
+
+	return countZeros
 }
 
 func Resolve(data []string) [2]any {

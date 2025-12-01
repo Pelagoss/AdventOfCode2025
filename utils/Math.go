@@ -7,3 +7,7 @@ func Abs(x int) int {
 
 	return x
 }
+
+func Modulo(a, b int) int {
+	return (a%b + b) % b
+}
