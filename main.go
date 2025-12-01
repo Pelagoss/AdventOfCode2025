@@ -2,25 +2,6 @@ package main
 
 import (
 	"adventOfCode/Day01"
-	"adventOfCode/Day02"
-	"adventOfCode/Day03"
-	"adventOfCode/Day04"
-	"adventOfCode/Day05"
-	"adventOfCode/Day06"
-	"adventOfCode/Day07"
-	"adventOfCode/Day08"
-	"adventOfCode/Day09"
-	"adventOfCode/Day10"
-	"adventOfCode/Day11"
-	"adventOfCode/Day12"
-	"adventOfCode/Day13"
-	"adventOfCode/Day14"
-	"adventOfCode/Day15"
-	"adventOfCode/Day16"
-	"adventOfCode/Day17"
-	"adventOfCode/Day18"
-	"adventOfCode/Day19"
-	"adventOfCode/Day20"
 	"adventOfCode/utils"
 	"bufio"
 	"fmt"
@@ -37,29 +18,10 @@ type ResolverFunc func([]string) [2]any
 
 func main() {
 	solutionMap := map[int]ResolverFunc{
-		1:  Day01.Resolve,
-		2:  Day02.Resolve,
-		3:  Day03.Resolve,
-		4:  Day04.Resolve,
-		5:  Day05.Resolve,
-		6:  Day06.Resolve,
-		7:  Day07.Resolve,
-		8:  Day08.Resolve,
-		9:  Day09.Resolve,
-		10: Day10.Resolve,
-		11: Day11.Resolve,
-		12: Day12.Resolve,
-		13: Day13.Resolve,
-		14: Day14.Resolve,
-		15: Day15.Resolve,
-		16: Day16.Resolve,
-		17: Day17.Resolve,
-		18: Day18.Resolve,
-		19: Day19.Resolve,
-		20: Day20.Resolve,
+		1: Day01.Resolve,
 	}
 
-	fmt.Println("\033[1m\033[32mAdvent of code 2024\033[0m")
+	fmt.Println("\033[1m\033[32mAdvent of code 2025\033[0m")
 	fmt.Println("List of available solutions:")
 
 	// Récupérer les dossiers correspondant aux jours
