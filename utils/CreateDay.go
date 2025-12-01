@@ -20,6 +20,13 @@ func CreateDay(day int) {
 		return
 	}
 
+	_, err = os.Create(fmt.Sprintf("%s/test", dirName))
+
+	if err != nil {
+		fmt.Println("Can't creat day, stopping ...")
+		return
+	}
+
 	dayFile, err := os.Create(fmt.Sprintf("%s/main.go", dirName))
 
 	if err != nil {
@@ -93,12 +100,6 @@ func CreateDay(day int) {
 			cmd.Output()
 			cmd = exec.Command("git", "push")
 			cmd.Output()
-
-			_, err = os.Create(fmt.Sprintf("%s/test", dirName))
-
-			if err != nil {
-				return
-			}
 		}
 	}
 }
