@@ -2,6 +2,7 @@ package main
 
 import (
 	"adventOfCode/Day01"
+	"adventOfCode/Day02"
 	"adventOfCode/utils"
 	"bufio"
 	"fmt"
@@ -19,6 +20,7 @@ type ResolverFunc func([]string) [2]any
 func main() {
 	solutionMap := map[int]ResolverFunc{
 		1: Day01.Resolve,
+		02: Day02.Resolve,
 	}
 
 	fmt.Println("\033[1m\033[32mAdvent of code 2025\033[0m")
