@@ -3,6 +3,7 @@ package main
 import (
 	"adventOfCode/Day01"
 	"adventOfCode/Day02"
+	"adventOfCode/Day03"
 	"adventOfCode/utils"
 	"bufio"
 	"fmt"
@@ -21,6 +22,7 @@ func main() {
 	solutionMap := map[int]ResolverFunc{
 		1: Day01.Resolve,
 		2: Day02.Resolve,
+		03: Day03.Resolve,
 	}
 
 	fmt.Println("\033[1m\033[32mAdvent of code 2025\033[0m")

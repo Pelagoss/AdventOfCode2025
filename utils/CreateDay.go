@@ -34,9 +34,9 @@ func CreateDay(day int) {
 		return
 	} else {
 		_, err := dayFile.WriteString(
-			fmt.Sprintf("package %s\n%s",
+			fmt.Sprintf("package %s\n\n%s",
 				dirName,
-				"func ResolvePart1(data []string) int {\n\treturn 0\n}\nfunc ResolvePart2(data []string) int {\n\treturn 0\n}\nfunc Resolve(data []string) [2]any {\n\treturn [2]any{\n\t\tResolvePart1(data),\n\t\tResolvePart2(data),\n\t}\n}",
+				"func ResolvePart1(data []string) int {\n\treturn 0\n}\n\nfunc ResolvePart2(data []string) int {\n\treturn 0\n}\n\nfunc Resolve(data []string) [2]any {\n\treturn [2]any{\n\t\tResolvePart1(data),\n\t\tResolvePart2(data),\n\t}\n}",
 			),
 		)
 
