@@ -20,8 +20,8 @@ type ResolverFunc func([]string) [2]any
 
 func main() {
 	solutionMap := map[int]ResolverFunc{
-		1: Day01.Resolve,
-		2: Day02.Resolve,
+		1:  Day01.Resolve,
+		2:  Day02.Resolve,
 		03: Day03.Resolve,
 	}
 
