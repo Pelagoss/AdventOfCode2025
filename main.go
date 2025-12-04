@@ -27,6 +27,13 @@ func main() {
 		04: Day04.Resolve,
 	}
 
+	mode := "data"
+
+	if len(os.Args) > 1 {
+		mode = os.Args[1]
+		fmt.Println(fmt.Sprintf("\u001B[33m[%v MODE]\u001B[0m ", strings.ToUpper(mode)))
+	}
+
 	fmt.Println("\033[1m\033[32mAdvent of code 2025\033[0m")
 	fmt.Println("List of available solutions:")
 
@@ -64,12 +71,6 @@ func main() {
 		} else {
 			input = "all"
 		}
-	}
-
-	mode := "data"
-
-	if len(os.Args) > 1 {
-		mode = os.Args[1]
 	}
 
 	// Vérification et exécution
