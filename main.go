@@ -66,6 +66,12 @@ func main() {
 		}
 	}
 
+	mode := "data"
+
+	if len(os.Args) > 1 {
+		mode = os.Args[1]
+	}
+
 	// Vérification et exécution
 	if input != "all" {
 		day, err := strconv.Atoi(input)
@@ -77,17 +83,17 @@ func main() {
 			}
 			return
 		}
-		executeDay(day, solutionMap)
+		executeDay(day, solutionMap, mode)
 	} else {
 		for day := 1; day <= len(folders); day++ {
-			executeDay(day, solutionMap)
+			executeDay(day, solutionMap, mode)
 		}
 	}
 }
 
-func executeDay(day int, solutionMap map[int]ResolverFunc) {
+func executeDay(day int, solutionMap map[int]ResolverFunc, mode string) {
 	dayFolder := fmt.Sprintf("Day%02d", day)
-	dataFile := filepath.Join(dayFolder, "data")
+	dataFile := filepath.Join(dayFolder, mode)
 	data := utils.ReadFile(dataFile)
 
 	headerFmt := color.New(color.FgGreen, color.Underline).SprintfFunc()
