@@ -5,6 +5,7 @@ import (
 	"adventOfCode/Day02"
 	"adventOfCode/Day03"
 	"adventOfCode/Day04"
+	"adventOfCode/Day05"
 	"adventOfCode/utils"
 	"bufio"
 	"fmt"
@@ -25,6 +26,7 @@ func main() {
 		2:  Day02.Resolve,
 		03: Day03.Resolve,
 		04: Day04.Resolve,
+		05: Day05.Resolve,
 	}
 
 	mode := "data"
